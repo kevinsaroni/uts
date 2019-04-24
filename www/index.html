@@ -6,11 +6,11 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+            var nama_lk = $("#nama_lk").val();
+            var nim = $("#nim").val();
+            var nama_anggota = $("#nama_anggota").val();
+            var dataString = "nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&insert=";
+            if ($.trim(nim).length > 0 & $.trim(nim).length > 0 & $.trim(nama_anggota).length > 0) {
                 $.ajax({
                     type: "POST",
                     url: "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/insert.php",
@@ -46,16 +46,16 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>nama_lk</label>
+            <input type="text" id="nama_lk" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>nim</label>
+            <input type="text" id="nim" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>nama_anggota</label>
+            <input type="text" id="nama_anggota" value="" />
         </div>
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
