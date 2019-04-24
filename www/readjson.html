@@ -10,10 +10,10 @@
             console.log(result);
             $.each(result, function(i, field) {
                 var id = field.id;
-                var title = field.title;
-                var duration = field.duration;
-                var price = field.price;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+                var nama_lk = field.nama_lk;
+                var nim = field.nim;
+                var nama_anggota = field.nama_anggota;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "'>   <h2>" + nama_lk + " </h2><p>" + nim + "</p><p>" + nama_anggota + "</p></a>");
             });
         });
     });
