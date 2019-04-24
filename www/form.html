@@ -7,19 +7,19 @@
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var title = decodeURI(getUrlVars()["title"]);
-        var duration = decodeURI(getUrlVars()["duration"]);
-        var price = decodeURI(getUrlVars()["price"]);
+        var nama_lk = decodeURI(getUrlVars()["nama_lk"]);
+        var nim = decodeURI(getUrlVars()["nim"]);
+        var nama_anggota = decodeURI(getUrlVars()["nama_anggota"]);
         $("#id").val(id);
-        $("#title").val(title);
-        $("#duration").val(duration);
-        $("#price").val(price);
+        $("#nama_lk").val(nama_lk);
+        $("#nim").val(nim);
+        $("#nama_anggota").val(nama_anggota);
         $("#update").click(function() {
             var id = $("#id").val();
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "&update=";
+            var nama_lk = $("#nama_lk").val();
+            var nim = $("#nim").val();
+            var nama_anggota = $("#nama_anggota").val();
+            var dataString = "id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&update=";
             $.ajax({
                 type: "POST",
                 url: "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/update.php",
@@ -78,16 +78,16 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
-            <input type="text" id="title" value="" />
+            <label>nama_lk</label>
+            <input type="text" id="nama_lk" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
-            <input type="text" id="duration" value="" />
+            <label>nim</label>
+            <input type="text" id="nim" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
-            <input type="text" id="price" value="" />
+            <label>nama_anggota</label>
+            <input type="text" id="nama_anggota" value="" />
         </div>
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
