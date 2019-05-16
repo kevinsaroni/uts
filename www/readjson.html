@@ -1,11 +1,12 @@
 <html>
 
 <head>
+    <title>SILKU</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/json.php";
+        var url = "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
@@ -13,7 +14,7 @@
                 var nama_lk = field.nama_lk;
                 var nim = field.nim;
                 var nama_anggota = field.nama_anggota;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "'>   <h2>" + nama_lk + " </h2><p>" + nim + "</p><p>" + nama_anggota + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "'><h2>" + nama_lk + " </h2><p>" + nim + "</p><p>" + nama_anggota + "</p></a>");
             });
         });
     });
