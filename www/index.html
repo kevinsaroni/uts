@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title>SILKU</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
@@ -10,10 +11,10 @@
             var nim = $("#nim").val();
             var nama_anggota = $("#nama_anggota").val();
             var dataString = "nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&insert=";
-            if ($.trim(nim).length > 0 & $.trim(nim).length > 0 & $.trim(nama_anggota).length > 0) {
+            if ($.trim(nama_lk).length > 0 & $.trim(nim).length > 0 & $.trim(nama_anggota).length > 0) {
                 $.ajax({
                     type: "POST",
-                    url: "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/insert.php",
+                    url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/insert.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -46,15 +47,15 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>nama_lk</label>
+            <label>Nama Lembaga Kemahasiswaan</label>
             <input type="text" id="nama_lk" value="" />
         </div>
         <div class="item">
-            <label>nim</label>
+            <label>NIM</label>
             <input type="text" id="nim" value="" />
         </div>
         <div class="item">
-            <label>nama_anggota</label>
+            <label>Nama Anggota</label>
             <input type="text" id="nama_anggota" value="" />
         </div>
         <div class="item">
