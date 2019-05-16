@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title>SILKU</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/geturi.js"></script>
@@ -22,7 +23,7 @@
             var dataString = "id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/update.php",
+                url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -45,7 +46,7 @@
             var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://akhlakulaziz.000webhostapp.com/appcordova-master/www/delete.php",
+                url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -78,15 +79,15 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>nama_lk</label>
+            <label>Nama Lembaga Kemahasiswaan</label>
             <input type="text" id="nama_lk" value="" />
         </div>
         <div class="item">
-            <label>nim</label>
+            <label>NIM</label>
             <input type="text" id="nim" value="" />
         </div>
         <div class="item">
-            <label>nama_anggota</label>
+            <label>Nama Anggota</label>
             <input type="text" id="nama_anggota" value="" />
         </div>
         <div class="item">
