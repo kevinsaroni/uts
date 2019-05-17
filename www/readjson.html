@@ -1,20 +1,23 @@
 <html>
 
 <head>
-    <title>SILKU</title>
+    <title>Data Penduduk</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/json.php";
+        var url = "https://tugasutsrest.000webhostapp.com/appcordova/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
                 var id = field.id;
-                var nama_lk = field.nama_lk;
-                var nim = field.nim;
-                var nama_anggota = field.nama_anggota;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "'><h2>" + nama_lk + " </h2><p>" + nim + "</p><p>" + nama_anggota + "</p></a>");
+                var nama_lengkap = field.nama_lengkap;
+                var NIK = field.NIK;
+                var jenis_kelamin = field.jenis_kelamin;
+                var TTL = field.TTL;
+                var agama = field.agama;
+                var pekerjaan = field.pekerjaan;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama_lengkap=" + nama_lengkap + "&NIK=" + NIK + "&jenis_kelamin=" + jenis_kelamin + "&TTL=" + TTL + "&agama=" + agama + "&pekerjaan=" + pekerjaan + "'><h2>" + nama_lengkap + " </h2><p>" + NIK + "</p><p>" + jenis_kelamin + "</p><p>" + TTL + "</p><p>" + agama + "</p><p>" + pekerjaan + "</p></a>");
             });
         });
     });
