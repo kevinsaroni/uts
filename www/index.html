@@ -1,20 +1,23 @@
 <html>
 
 <head>
-    <title>SILKU</title>
+    <title>Data Penduduk</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var nama_lk = $("#nama_lk").val();
-            var nim = $("#nim").val();
-            var nama_anggota = $("#nama_anggota").val();
-            var dataString = "nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&insert=";
-            if ($.trim(nama_lk).length > 0 & $.trim(nim).length > 0 & $.trim(nama_anggota).length > 0) {
+            var nama_lengkap = $("#nama_lengkap").val();
+            var NIK = $("#NIK").val();
+            var jenis_kelamin = $("#jenis_kelamin").val();
+            var TTL = $("#TTL").val();
+            var agama = $("#agama").val();
+            var pekerjaan = $("#pekerjaan").val();
+            var dataString = "nama_lengkap=" + nama_lengkap + "&NIK=" + NIK + "&jenis_kelamin=" + jenis_kelamin + "&TTL=" + TTL + "&agama=" + agama + "&pekerjaan=" + pekerjaan + "&insert=";
+            if ($.trim(nama_lengkap).length > 0 & $.trim(NIK).length > 0 & $.trim(jenis_kelamin).length > 0 & $.trim(TTL).length > 0 & $.trim(agama).length > 0 & $.trim(pekerjaan).length > 0) {
                 $.ajax({
                     type: "POST",
-                    url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/insert.php",
+                    url: "https://tugasutsrest.000webhostapp.com/appcordova/www/insert.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -47,16 +50,28 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Nama Lembaga Kemahasiswaan</label>
-            <input type="text" id="nama_lk" value="" />
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama_lengkap" value="" />
         </div>
         <div class="item">
-            <label>NIM</label>
-            <input type="text" id="nim" value="" />
+            <label>NIK</label>
+            <input type="text" id="NIK" value="" />
         </div>
         <div class="item">
-            <label>Nama Anggota</label>
-            <input type="text" id="nama_anggota" value="" />
+            <label>Jenis Kelamin</label>
+            <input type="text" id="jenis_kelamin" value="" />
+        </div>
+        <div class="item">
+            <label>Tempat Tanggal Lahir</label>
+            <input type="text" id="TTL" value="" />
+        </div>
+        <div class="item">
+            <label>Agama</label>
+            <input type="text" id="agama" value="" />
+        </div>
+        <div class="item">
+            <label>Pekerjaan</label>
+            <input type="text" id="pekerjaan" value="" />
         </div>
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
