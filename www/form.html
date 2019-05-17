@@ -1,29 +1,38 @@
 <html>
 
 <head>
-    <title>SILKU</title>
+    <title>Data Penduduk</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var nama_lk = decodeURI(getUrlVars()["nama_lk"]);
-        var nim = decodeURI(getUrlVars()["nim"]);
-        var nama_anggota = decodeURI(getUrlVars()["nama_anggota"]);
+        var nama_lengkap = decodeURI(getUrlVars()["nama_lengkap"]);
+        var NIK = decodeURI(getUrlVars()["NIK"]);
+        var jenis_kelamin = decodeURI(getUrlVars()["jenis_kelamin"]);
+        var TTL = decodeURI(getUrlVars()["TTL"]);
+        var agama = decodeURI(getUrlVars()["agama"]);
+        var pekerjaan = decodeURI(getUrlVars()["pekerjaan"]);
         $("#id").val(id);
-        $("#nama_lk").val(nama_lk);
-        $("#nim").val(nim);
-        $("#nama_anggota").val(nama_anggota);
+        $("#nama_lengkap").val(nama_lengkap);
+        $("#NIK").val(NIK);
+        $("#jenis_kelamin").val(jenis_kelamin);
+        $("#TTL").val(TTL);
+        $("#agama").val(agama);
+        $("#pekerjaan").val(pekerjaan);
         $("#update").click(function() {
             var id = $("#id").val();
-            var nama_lk = $("#nama_lk").val();
-            var nim = $("#nim").val();
-            var nama_anggota = $("#nama_anggota").val();
-            var dataString = "id=" + id + "&nama_lk=" + nama_lk + "&nim=" + nim + "&nama_anggota=" + nama_anggota + "&update=";
+            var nama_lengkap = $("#nama_lengkap").val();
+            var NIK = $("#NIK").val();
+            var jenis_kelamin = $("#jenis_kelamin").val();
+            var TTL = $("#TTL").val();
+            var agama = $("#agama").val();
+            var pekerjaan = $("#pekerjaan").val();
+            var dataString = "id=" + id + "&nama_lengkap=" + nama_lengkap + "&NIK=" + NIK + "&jenis_kelamin=" + jenis_kelamin + "&TTL=" + TTL + "&agama" + agama +"&pekerjaan=" + pekerjaan + "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/update.php",
+                url: "https://tugasutsrest.000webhostapp.com/appcordova/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -46,7 +55,7 @@
             var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://rinoadifismawan.000webhostapp.com/appcordova-master/www/delete.php",
+                url: "https://tugasutsrest.000webhostapp.com/appcordova/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -79,16 +88,28 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Nama Lembaga Kemahasiswaan</label>
-            <input type="text" id="nama_lk" value="" />
+            <label>Nama Lengkap</label>
+            <input type="text" id="nama_lengkap" value="" />
         </div>
         <div class="item">
-            <label>NIM</label>
-            <input type="text" id="nim" value="" />
+            <label>NIK</label>
+            <input type="text" id="NIK" value="" />
         </div>
         <div class="item">
-            <label>Nama Anggota</label>
-            <input type="text" id="nama_anggota" value="" />
+            <label>Jenis Kelamin</label>
+            <input type="text" id="jenis_kelamin" value="" />
+        </div>
+        <div class="item">
+            <label>Tempat Tanggal Lahir</label>
+            <input type="text" id="TTL" value="" />
+        </div>
+        <div class="item">
+            <label>Agama</label>
+            <input type="text" id="agama" value="" />
+        </div>
+        <div class="item">
+            <label>Pekerjaan</label>
+            <input type="text" id="pekerjaan" value="" />
         </div>
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
